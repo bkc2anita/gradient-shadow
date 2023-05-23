@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0%;
+            margin: 0%;
+            height: 100vh;
+            background-color: black;
+        }
+        .box{
+            height: 250px;
+            width: 400px;
+            position: relative;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0%;
+            border-radius: 20px;
+        }
+        .box::after,
+        .box::before{
+            content: "";
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            background: linear-gradient(45deg,red, blue,aqua,yellow,green,red, blue,aqua,yellow,green);
+            position: absolute;
+            left: -5px;
+            top: -5px;
+            z-index: -1;
+            background-size: 300%;
+            animation: animate_shadow 10s linear infinite alternate;
+        }
+        .box::after{
+            filter: blur(100px);
+        }
+        @keyframes animate_shadow{
+            0%{
+                background-position: 0 0;
+            }
+            50%{
+                background-position: 100% 0;
+            }
+            100%{
+                background-position: 0 0;
+            }
+        }
+        #text{
+            font-size: 30px;
+            text-transform: capitalize;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+        <div class="box">
+            <h3 id="text">welcome</h3>
+        </div>
+
+        <script>
+            let text = prompt();
+            document.getElementById("text").innerText = text;
+        </script>
+</body>
+</html>
