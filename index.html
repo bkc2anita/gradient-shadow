@@ -42,6 +42,10 @@
         .box::after{
             filter: blur(100px);
         }
+         @media only screen and (max-width: 450px){
+            .box{
+            width: 95vw;
+        }
         @keyframes animate_shadow{
             0%{
                 background-position: 0 0;
@@ -66,7 +70,7 @@
         </div>
 
         <script>
-            let text = prompt();
+            let text = prompt("Please Enter Your Name");
             document.getElementById("text").innerText = text;
         </script>
 </body>
